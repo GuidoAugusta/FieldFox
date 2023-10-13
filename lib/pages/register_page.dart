@@ -1,16 +1,16 @@
-import 'package:field_fox/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   // status show password
-  bool _isObscure = true;
+  bool _isPasswordObscure = true;
+  bool _isPasswordConfirmationObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +44,35 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  'Nama Lengkap',
+                  style: TextStyle(fontSize: 16),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Masukkan email',
+                    hintStyle: TextStyle(color: Color(0x40000000)),
+                    hoverColor: Colors.transparent,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Color(0x33000000),
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Color(0x33000000),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 12,
+                ),
                 Text(
                   'Email',
                   style: TextStyle(fontSize: 16),
@@ -87,11 +116,11 @@ class _LoginPageState extends State<LoginPage> {
                       highlightColor: Colors.transparent,
                       onPressed: () {
                         setState(() {
-                          _isObscure = !_isObscure;
+                          _isPasswordObscure = !_isPasswordObscure;
                         });
                       },
                       icon: Icon(
-                        _isObscure
+                        _isPasswordObscure
                             ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined,
                         color: Color(0x33000000),
@@ -113,26 +142,57 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  obscureText: _isObscure,
+                  obscureText: _isPasswordObscure,
+                  obscuringCharacter: '●',
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Text(
+                  'Konfirmasi Password',
+                  style: TextStyle(fontSize: 16),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onPressed: () {
+                        setState(() {
+                          _isPasswordConfirmationObscure = !_isPasswordConfirmationObscure;
+                        });
+                      },
+                      icon: Icon(
+                        _isPasswordConfirmationObscure
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                        color: Color(0x33000000),
+                      ),
+                    ),
+                    hintText: 'Masukkan password',
+                    hintStyle: TextStyle(color: Color(0x40000000)),
+                    hoverColor: Colors.transparent,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Color(0x33000000),
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Color(0x33000000),
+                      ),
+                    ),
+                  ),
+                  obscureText: _isPasswordConfirmationObscure,
                   obscuringCharacter: '●',
                 ),
                 SizedBox(
                   height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      overlayColor:
-                          MaterialStateProperty.all(Colors.transparent),
-                      onTap: () {},
-                      child: Text(
-                        'Lupa Password?',
-                        style: TextStyle(color: Color(0xFFA9A9A9)),
-                      ),
-                    ),
-                  ],
                 ),
                 SizedBox(
                   height: 30,
@@ -149,7 +209,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     onPressed: () {},
                     child: Text(
-                      'Login',
+                      'Register',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
@@ -158,24 +218,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
-                ),
-                Center(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
-                    },
-                    splashColor: Colors.transparent,
-                    overlayColor: MaterialStateProperty.all(Colors.transparent),
-                    child: Text(
-                      'Register',
-                      style: TextStyle(
-                        color: Color(0xFFF58235),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
+                  height: 60,
                 ),
               ],
             ),
