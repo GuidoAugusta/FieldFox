@@ -19,9 +19,9 @@ class _RegisterPageState extends State<RegisterPage> {
         padding: EdgeInsets.zero,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image.asset('assets/ellipse1.png'),
+              Image.asset('assets/ellipse2.png'),
             ],
           ),
           SizedBox(
@@ -217,9 +217,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 60,
                 ),
               ],
             ),
