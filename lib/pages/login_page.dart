@@ -1,3 +1,4 @@
+import 'package:field_fox/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -161,11 +162,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Center(
                   child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const RegisterPage()));
+                    },
                     splashColor: Colors.transparent,
                     overlayColor: MaterialStateProperty.all(Colors.transparent),
-                    onTap: () {
-                      Navigator.pushNamed(context, '/register');
-                    },
                     child: Text(
                       'Register',
                       style: TextStyle(
