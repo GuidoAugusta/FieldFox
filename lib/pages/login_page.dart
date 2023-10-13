@@ -163,7 +163,9 @@ class _LoginPageState extends State<LoginPage> {
                   child: InkWell(
                     splashColor: Colors.transparent,
                     overlayColor: MaterialStateProperty.all(Colors.transparent),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, '/register');
+                    },
                     child: Text(
                       'Register',
                       style: TextStyle(
