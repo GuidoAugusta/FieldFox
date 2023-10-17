@@ -24,10 +24,20 @@ class _HomePageState extends State<HomePage> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Image.asset(
-        'assets/banner_homepage.png',
+        'assets/banner2_homepage.png',
+        // width: 360,
         fit: BoxFit.fill,
       ),
-    )
+    ),
+    Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Image.asset(
+        'assets/banner3_homepage.png',
+        fit: BoxFit.fill,
+      ),
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 20, right: 20, top: 10),
+                padding: EdgeInsets.only(left: 20, right: 20, top: 15),
                 child: Column(
                   children: [
                     Row(
@@ -64,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             SizedBox(
-                              width: 30,
+                              width: 20,
                             ),
                             IconButton(
                               padding: EdgeInsets.zero,
@@ -128,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                   items: imageSliders,
                   carouselController: CarouselController(),
                   options: CarouselOptions(
-                    height: 115,
+                    height: 108,
                     autoPlay: true,
                     autoPlayInterval: Duration(seconds: 5),
                     viewportFraction: 1,
@@ -138,9 +148,154 @@ class _HomePageState extends State<HomePage> {
                     // padEnds: false,
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
             ],
-          )
+          ),
+          SizedBox(
+            height: 30,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
+                  width: 90,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1,
+                      color: const Color.fromARGB(80, 0, 0, 0),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                    child: Row(
+                      children: [
+                        Image.asset('assets/bola_basket.png'),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Basket',
+                          style: TextStyle(fontSize: 12),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  width: 90,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1,
+                      color: const Color.fromARGB(80, 0, 0, 0),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                    child: Row(
+                      children: [
+                        Image.asset('assets/bola_futsal.png'),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Futsal',
+                          style: TextStyle(fontSize: 12),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  width: 104,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1,
+                      color: const Color.fromARGB(80, 0, 0, 0),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                    child: Row(
+                      children: [
+                        Image.asset('assets/kok_badminton.png'),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Badminton',
+                          style: TextStyle(fontSize: 12),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  width: 90,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1,
+                      color: const Color.fromARGB(80, 0, 0, 0),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(18, 5, 10, 5),
+                    child: Row(
+                      children: [
+                        Image.asset('assets/bola_voli.png'),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Voli',
+                          style: TextStyle(fontSize: 12),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 24,
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Text(
+              'Menu',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 12,
+          ),
         ],
       ),
     );
