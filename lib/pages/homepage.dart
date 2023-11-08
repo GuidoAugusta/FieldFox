@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -305,6 +307,71 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 12,
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 22),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                MenuHomepage(
+                  image: 'assets/lapangan.png',
+                  title: 'Lapangan',
+                ),
+                MenuHomepage(
+                  image: 'assets/gym.png',
+                  title: 'Gym',
+                ),
+                MenuHomepage(
+                  image: 'assets/favorite.png',
+                  title: 'Favorit',
+                ),
+                MenuHomepage(
+                  image: 'assets/komunitas.png',
+                  title: 'Komunitas',
+                ),
+                MenuHomepage(
+                  image: 'assets/bantuan.png',
+                  title: 'Bantuan',
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class MenuHomepage extends StatelessWidget {
+  final String image;
+  final String title;
+
+  MenuHomepage({required this.image, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      child: Column(
+        children: [
+          Container(
+            width: 50,
+            height: 50,
+            child: Card(
+              elevation: 3,
+              margin: EdgeInsets.zero,
+              color: Color(0xFFFFF6EE),
+              child: Image.asset(image),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            title,
+            style: TextStyle(fontSize: 11),
+          )
         ],
       ),
     );
