@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                               highlightColor: Colors.transparent,
                               onPressed: () {},
                               icon: Icon(
-                                Icons.message_outlined,
+                                FeatherIcons.messageSquare,
                                 size: 30,
                               ),
                             ),
@@ -91,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                               highlightColor: Colors.transparent,
                               onPressed: () {},
                               icon: Icon(
-                                Icons.notifications_none_outlined,
+                                FeatherIcons.bell,
                                 size: 30,
                               ),
                             ),
