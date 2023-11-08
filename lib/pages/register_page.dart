@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -78,7 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 TextField(
                   decoration: InputDecoration(
-                    hintText: 'Masukkan email',
+                    hintText: 'masukkan nama',
                     hintStyle: TextStyle(color: Color(0x40000000)),
                     hoverColor: Colors.transparent,
                     enabledBorder: OutlineInputBorder(
@@ -146,8 +147,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       },
                       icon: Icon(
                         _isPasswordObscure
-                            ? Icons.visibility_outlined
-                            : Icons.visibility_off_outlined,
+                            ? FeatherIcons.eye
+                            : FeatherIcons.eyeOff,
                         color: Color(0x33000000),
                       ),
                     ),
@@ -193,8 +194,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       },
                       icon: Icon(
                         _isPasswordConfirmationObscure
-                            ? Icons.visibility_outlined
-                            : Icons.visibility_off_outlined,
+                            ? FeatherIcons.eye
+                            : FeatherIcons.eyeOff,
                         color: Color(0x33000000),
                       ),
                     ),
