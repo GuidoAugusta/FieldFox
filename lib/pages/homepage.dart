@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 10,
               ),
             ],
           ),
@@ -173,118 +173,30 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   width: 20,
                 ),
-                Container(
-                  width: 90,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      width: 1,
-                      color: const Color.fromARGB(80, 0, 0, 0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/bola_basket.png'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'Basket',
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
-                    ),
-                  ),
+                MenuLapangan(
+                  image: 'assets/bola_basket.png',
+                  title: 'Basket',
                 ),
                 SizedBox(
                   width: 15,
                 ),
-                Container(
-                  width: 90,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      width: 1,
-                      color: const Color.fromARGB(80, 0, 0, 0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/bola_futsal.png'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'Futsal',
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
-                    ),
-                  ),
+                MenuLapangan(
+                  image: 'assets/bola_futsal.png',
+                  title: 'Basket',
                 ),
                 SizedBox(
                   width: 15,
                 ),
-                Container(
-                  width: 104,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      width: 1,
-                      color: const Color.fromARGB(80, 0, 0, 0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/kok_badminton.png'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'Badminton',
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
-                    ),
-                  ),
+                MenuLapangan(
+                  image: 'assets/kok_badminton.png',
+                  title: 'Basket',
                 ),
                 SizedBox(
                   width: 15,
                 ),
-                Container(
-                  width: 90,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      width: 1,
-                      color: const Color.fromARGB(80, 0, 0, 0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(18, 5, 10, 5),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/bola_voli.png'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'Voli',
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
-                    ),
-                  ),
+                MenuLapangan(
+                  image: 'assets/bola_voli.png',
+                  title: 'Basket',
                 ),
                 SizedBox(
                   width: 20,
@@ -341,6 +253,51 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+class MenuLapangan extends StatelessWidget {
+  final String image;
+  final String title;
+
+  MenuLapangan({
+    required this.image,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      child: Container(
+        width: 90,
+        height: 30,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            width: 1,
+            color: const Color.fromARGB(80, 0, 0, 0),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+          child: Row(
+            children: [
+              Image.asset(image),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                title,
+                style: TextStyle(fontSize: 12),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class MenuHomepage extends StatelessWidget {
   final String image;
   final String title;
@@ -359,6 +316,8 @@ class MenuHomepage extends StatelessWidget {
             width: 50,
             height: 50,
             child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)),
               elevation: 3,
               margin: EdgeInsets.zero,
               color: Color(0xFFFFF6EE),
