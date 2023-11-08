@@ -11,31 +11,39 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> imageSliders = [
     Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Image.asset(
-        'assets/banner_homepage.png',
-        fit: BoxFit.fill,
-      ),
-    ),
-    Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Image.asset(
-        'assets/banner2_homepage.png',
-        // width: 360,
-        fit: BoxFit.fill,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        elevation: 3,
+        child: Image.asset(
+          'assets/banner_homepage.png',
+          fit: BoxFit.fill,
+        ),
       ),
     ),
     Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        elevation: 3,
+        child: Image.asset(
+          'assets/banner2_homepage.png',
+          fit: BoxFit.fill,
+        ),
       ),
-      child: Image.asset(
-        'assets/banner3_homepage.png',
-        fit: BoxFit.fill,
+    ),
+    Container(
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        elevation: 3,
+        child: Image.asset(
+          'assets/banner3_homepage.png',
+          fit: BoxFit.fill,
+        ),
       ),
     ),
   ];
@@ -138,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                   items: imageSliders,
                   carouselController: CarouselController(),
                   options: CarouselOptions(
-                    height: 108,
+                    height: 116,
                     autoPlay: true,
                     autoPlayInterval: Duration(seconds: 5),
                     viewportFraction: 1,
@@ -150,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
             ],
           ),
