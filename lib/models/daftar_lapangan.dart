@@ -57,6 +57,6 @@ var lapanganList = [
     jmlCourt: '2',
     jamOperasional: '06:00 - 24:00',
     kategori: 'Futsal',
-    imageAsset: 'assets/telaga3futsal',
+    imageAsset: 'assets/telaga3futsal.png',
   ),
 ];

@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:field_fox/models/daftar_lapangan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
@@ -258,6 +259,77 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          SizedBox(
+            height: 10,
+          ),
+          SizedBox(
+            height: 290,
+            child: ListView.builder(
+              padding: EdgeInsets.only(left: 16, right: 10),
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                final Lapangan lapangan = lapanganList[index];
+                return Padding(
+                  padding: const EdgeInsets.only(right: 6),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: 175,
+                      height: 290,
+                      child: Card(
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 175,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    topRight: Radius.circular(8)),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(8),
+                                  topRight: Radius.circular(8),
+                                ),
+                                child: Image.asset(
+                                  lapangan.imageAsset,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(8, 8, 8, 12),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    lapangan.name,
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Image.asset('assets/rating.png'),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+              itemCount: lapanganList.length,
+            ),
+          )
         ],
       ),
     );
