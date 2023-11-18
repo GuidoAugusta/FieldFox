@@ -564,11 +564,16 @@ class _FavoriteButtonState extends State<FavoriteButton> {
           foregroundColor: Color.fromARGB(255, 169, 169, 169),
           backgroundColor: Colors.white,
           radius: 15,
-          child: Icon(
-            isFavorite ? Icons.favorite : Icons.favorite_border,
-            color: Colors.red,
-            size: 14,
-          ),
+          child: isFavorite
+              ? Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                  size: 14,
+                )
+              : Icon(
+                  Icons.favorite_border,
+                  size: 14,
+                ),
         ),
       ),
     );
