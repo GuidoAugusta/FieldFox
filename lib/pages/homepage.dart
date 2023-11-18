@@ -106,15 +106,21 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Row(
                       children: [
-                        // Icon(
-                        //   color: Color.fromARGB(40, 0, 0, 0),
-                        //   Icons.location_pin,
-                        //   size: 20,
-                        // ),
-                        // SizedBox(
-                        //   width: 5,
-                        // ),
-                        Text('Lokasi'),
+                        Icon(
+                          color: Color.fromARGB(80, 0, 0, 0),
+                          FeatherIcons.mapPin,
+                          size: 14,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          'Lokasi',
+                          style: TextStyle(
+                            color: Color.fromARGB(80, 0, 0, 0),
+                            fontSize: 12,
+                          ),
+                        ),
                         SizedBox(
                           width: 5,
                         ),
@@ -124,11 +130,12 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Text(
                                 'Yogyakarta',
-                                style: TextStyle(color: Color(0xFFF58235)),
+                                style: TextStyle(
+                                    color: Color(0xFFF58235), fontSize: 12),
                               ),
                               Icon(
                                 Icons.keyboard_arrow_down_rounded,
-                                size: 20,
+                                size: 14,
                                 color: Color(0xFFF58235),
                               )
                             ],
@@ -181,21 +188,21 @@ class _HomePageState extends State<HomePage> {
                 ),
                 MenuLapangan(
                   image: 'assets/bola_futsal.png',
-                  title: 'Basket',
+                  title: 'Futsal',
                 ),
                 SizedBox(
                   width: 15,
                 ),
                 MenuLapangan(
                   image: 'assets/kok_badminton.png',
-                  title: 'Basket',
+                  title: 'Badminton',
                 ),
                 SizedBox(
                   width: 15,
                 ),
                 MenuLapangan(
                   image: 'assets/bola_voli.png',
-                  title: 'Basket',
+                  title: 'Voli',
                 ),
                 SizedBox(
                   width: 20,
@@ -303,20 +310,110 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.fromLTRB(8, 8, 8, 12),
+                              padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
+                              child: SizedBox(
+                                height: 60,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      lapangan.name,
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Image.asset('assets/rating.png'),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 28,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    lapangan.name,
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        FeatherIcons.mapPin,
+                                        size: 14,
+                                        // color: Color(value),
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
+                                      Text(
+                                        lapangan.alamatSingkat,
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      )
+                                    ],
                                   ),
                                   SizedBox(
-                                    height: 10,
+                                    height: 3,
                                   ),
-                                  Image.asset('assets/rating.png'),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        FeatherIcons.calendar,
+                                        size: 14,
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
+                                      Text(
+                                        'Tersedia',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Divider(),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Mulai Dari',
+                                        style: TextStyle(
+                                          color: Color(0xFF5E5E5E),
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 1,
+                                      ),
+                                      Text(
+                                        'Rp 30.000',
+                                        style: TextStyle(
+                                          color: Color(0xFFF48C06),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  const FavoriteButton(),
                                 ],
                               ),
                             )
@@ -351,29 +448,35 @@ class MenuLapangan extends StatelessWidget {
       onTap: () {},
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
-      child: Container(
-        width: 90,
-        height: 30,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            width: 1,
-            color: const Color.fromARGB(80, 0, 0, 0),
+      child: UnconstrainedBox(
+        child: Container(
+          // width: 90,
+          // height: 30,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              width: 1,
+              color: const Color.fromARGB(80, 0, 0, 0),
+            ),
           ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-          child: Row(
-            children: [
-              Image.asset(image),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                title,
-                style: TextStyle(fontSize: 12),
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+            child: Row(
+              children: [
+                Image.asset(
+                  image,
+                  width: 18,
+                  height: 18,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 12),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -415,6 +518,42 @@ class MenuHomepage extends StatelessWidget {
             style: TextStyle(fontSize: 11),
           )
         ],
+      ),
+    );
+  }
+}
+
+class FavoriteButton extends StatefulWidget {
+  const FavoriteButton({super.key});
+
+  @override
+  State<FavoriteButton> createState() => _FavoriteButtonState();
+}
+
+class _FavoriteButtonState extends State<FavoriteButton> {
+  bool isFavorite = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      backgroundColor: Color.fromARGB(255, 169, 169, 169),
+      radius: 16,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            isFavorite = !isFavorite;
+          });
+        },
+        child: CircleAvatar(
+          foregroundColor: Color.fromARGB(255, 169, 169, 169),
+          backgroundColor: Colors.white,
+          radius: 15,
+          child: Icon(
+            isFavorite ? Icons.favorite : Icons.favorite_border,
+            color: Colors.red,
+            size: 14,
+          ),
+        ),
       ),
     );
   }

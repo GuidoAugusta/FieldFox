@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Lapangan {
   String name;
   String alamatSingkat;
