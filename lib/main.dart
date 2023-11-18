@@ -1,3 +1,4 @@
+import 'package:field_fox/pages/homepage.dart';
 import 'package:field_fox/pages/login_page.dart';
 import 'package:field_fox/pages/register_page.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => LoginPage(),
-        '/register': (context) => RegisterPage()
+        '/register': (context) => RegisterPage(),
+        '/homepage': (context) => HomePage(),
       },
     );
   }

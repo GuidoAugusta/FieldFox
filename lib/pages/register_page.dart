@@ -22,7 +22,32 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image.asset('assets/ellipse2.png'),
+              Stack(
+                children: [
+                  Image.asset('assets/ellipse2.png'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 44, left: 20),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          size: 20,
+                          color: Color(0xFFF58235),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
           SizedBox(
@@ -209,7 +234,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       backgroundColor: Color(0xFFF58235),
                       minimumSize: Size(double.infinity, 52),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/homepage');
+                    },
                     child: Text(
                       'Register',
                       style: TextStyle(
