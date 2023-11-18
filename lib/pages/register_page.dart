@@ -235,7 +235,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       minimumSize: Size(double.infinity, 52),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/homepage');
+                      Navigator.pushNamed(context, '/mainpage');
                     },
                     child: Text(
                       'Register',
