@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -21,7 +22,32 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image.asset('assets/ellipse2.png'),
+              Stack(
+                children: [
+                  Image.asset('assets/ellipse2.png'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 44, left: 20),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          size: 20,
+                          color: Color(0xFFF58235),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
           SizedBox(
@@ -53,7 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 TextField(
                   decoration: InputDecoration(
-                    hintText: 'Masukkan email',
+                    hintText: 'masukkan nama',
                     hintStyle: TextStyle(color: Color(0x40000000)),
                     hoverColor: Colors.transparent,
                     enabledBorder: OutlineInputBorder(
@@ -121,8 +147,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       },
                       icon: Icon(
                         _isPasswordObscure
-                            ? Icons.visibility_outlined
-                            : Icons.visibility_off_outlined,
+                            ? FeatherIcons.eye
+                            : FeatherIcons.eyeOff,
                         color: Color(0x33000000),
                       ),
                     ),
@@ -168,8 +194,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       },
                       icon: Icon(
                         _isPasswordConfirmationObscure
-                            ? Icons.visibility_outlined
-                            : Icons.visibility_off_outlined,
+                            ? FeatherIcons.eye
+                            : FeatherIcons.eyeOff,
                         color: Color(0x33000000),
                       ),
                     ),
@@ -208,7 +234,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       backgroundColor: Color(0xFFF58235),
                       minimumSize: Size(double.infinity, 52),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/homepage');
+                    },
                     child: Text(
                       'Register',
                       style: TextStyle(

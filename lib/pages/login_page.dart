@@ -1,5 +1,6 @@
 import 'package:field_fox/pages/register_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -91,9 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                       icon: Icon(
-                        _isObscure
-                            ? Icons.visibility_outlined
-                            : Icons.visibility_off_outlined,
+                        _isObscure ? FeatherIcons.eye : FeatherIcons.eyeOff,
                         color: Color(0x33000000),
                       ),
                     ),
@@ -147,7 +146,9 @@ class _LoginPageState extends State<LoginPage> {
                       backgroundColor: Color(0xFFF58235),
                       minimumSize: Size(double.infinity, 52),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/homepage');
+                    },
                     child: Text(
                       'Login',
                       style: TextStyle(
