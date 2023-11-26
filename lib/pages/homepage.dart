@@ -330,7 +330,7 @@ class RekomendasiLapangan extends StatelessWidget {
                       topRight: Radius.circular(8),
                     ),
                     child: Image.asset(
-                      lapangan.imageAsset,
+                      lapangan.imageAsset[0],
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -376,7 +376,7 @@ class RekomendasiLapangan extends StatelessWidget {
                           Text(
                             lapangan.alamatSingkat,
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 10,
                               fontWeight: FontWeight.w300,
                             ),
                           )
@@ -397,7 +397,7 @@ class RekomendasiLapangan extends StatelessWidget {
                           Text(
                             'Tersedia',
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 10,
                               fontWeight: FontWeight.w300,
                             ),
                           )
