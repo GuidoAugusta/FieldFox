@@ -1,6 +1,7 @@
 import 'package:field_fox/pages/homepage.dart';
 import 'package:field_fox/pages/login_page.dart';
 import 'package:field_fox/pages/main_page.dart';
+import 'package:field_fox/pages/menu_lapangan_page.dart';
 import 'package:field_fox/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/register': (context) => RegisterPage(),
         '/mainpage': (context) => MainPage(),
         '/homepage': (context) => HomePage(),
+        '/lapangan': (context) => MenuLapanganPage(),
       },
     );
   }

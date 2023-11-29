@@ -234,22 +234,27 @@ class _HomePageState extends State<HomePage> {
                 MenuHomepage(
                   image: 'assets/lapangan.png',
                   title: 'Lapangan',
+                  navigator: '/lapangan',
                 ),
                 MenuHomepage(
                   image: 'assets/gym.png',
                   title: 'Gym',
+                  navigator: '',
                 ),
                 MenuHomepage(
                   image: 'assets/favorite.png',
                   title: 'Favorit',
+                  navigator: '',
                 ),
                 MenuHomepage(
                   image: 'assets/komunitas.png',
                   title: 'Komunitas',
+                  navigator: '',
                 ),
                 MenuHomepage(
                   image: 'assets/bantuan.png',
                   title: 'Bantuan',
+                  navigator: '',
                 ),
               ],
             ),
@@ -503,13 +508,20 @@ class MenuLapangan extends StatelessWidget {
 class MenuHomepage extends StatelessWidget {
   final String image;
   final String title;
+  final String navigator;
 
-  MenuHomepage({required this.image, required this.title});
+  MenuHomepage({
+    required this.image,
+    required this.title,
+    required this.navigator,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, navigator);
+      },
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: Column(

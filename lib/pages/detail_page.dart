@@ -112,7 +112,7 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                     ),
                     Positioned(
-                      top: 44,
+                      top: 32,
                       left: 20,
                       child: InkWell(
                         onTap: () {
