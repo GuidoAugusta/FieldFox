@@ -1,3 +1,4 @@
+import 'package:field_fox/pages/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -111,7 +112,14 @@ class ProfilePage extends StatelessWidget {
               height: 38,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(context, PageRouteBuilder(
+                  pageBuilder: (BuildContext context, Animation animation,
+                      Animation secondaryAnimation) {
+                    return LoginPage();
+                  },
+                ), (Route route) => false);
+              },
               child: Text('Keluar'),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(

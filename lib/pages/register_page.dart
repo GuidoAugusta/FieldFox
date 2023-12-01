@@ -1,3 +1,4 @@
+import 'package:field_fox/pages/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
@@ -235,6 +236,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       minimumSize: Size(double.infinity, 52),
                     ),
                     onPressed: () {
+                      currentIndex = 0;
                       Navigator.pushNamed(context, '/mainpage');
                     },
                     child: Text(
