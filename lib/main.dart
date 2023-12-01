@@ -3,6 +3,7 @@ import 'package:field_fox/pages/login_page.dart';
 import 'package:field_fox/pages/main_page.dart';
 import 'package:field_fox/pages/menu_lapangan_page.dart';
 import 'package:field_fox/pages/register_page.dart';
+import 'package:field_fox/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => LoginPage(),
+        '/': (context) => SplashPage(),
+        '/login': (context) => LoginPage(),
         '/register': (context) => RegisterPage(),
         '/mainpage': (context) => MainPage(),
         '/homepage': (context) => HomePage(),
