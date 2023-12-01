@@ -6,6 +6,7 @@ class Lapangan {
   String jmlCourt;
   String jamOperasional;
   String kategori;
+  String hargaMulaiDari;
   List<String> imageAsset;
 
   Lapangan({
@@ -16,6 +17,7 @@ class Lapangan {
     required this.jmlCourt,
     required this.jamOperasional,
     required this.kategori,
+    required this.hargaMulaiDari,
     required this.imageAsset,
   });
 }
@@ -23,7 +25,7 @@ class Lapangan {
 var lapanganList = [
   Lapangan(
       name: 'Gor Badminton Margajaya',
-      alamatSingkat: 'Sleman, DI Yogyakarta',
+      alamatSingkat: 'Maguwoharjo, Kec. Depok',
       alamatLengkap:
           'Jl. Kadisoka, Tajem, Maguwoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281',
       tentang:
@@ -31,6 +33,7 @@ var lapanganList = [
       jmlCourt: '4',
       jamOperasional: '08:00 - 23:00',
       kategori: 'Badminton',
+      hargaMulaiDari: 'RP 30.000',
       imageAsset: [
         'assets/margajaya.png',
         'assets/margajaya.png',
@@ -38,7 +41,7 @@ var lapanganList = [
       ]),
   Lapangan(
       name: 'Lapangan Basket Amikom',
-      alamatSingkat: 'Sleman, DI Yogyakarta',
+      alamatSingkat: 'Condongcatur, Kec. Depok',
       alamatLengkap:
           'Jl. Ring Road Utara, Ngringin, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281',
       tentang:
@@ -46,6 +49,7 @@ var lapanganList = [
       jmlCourt: '1',
       jamOperasional: '07:00 - 23:00',
       kategori: 'Basket',
+      hargaMulaiDari: 'Gratis',
       imageAsset: [
         'assets/basketAmikom.png',
         'assets/basketAmikom.png',
@@ -53,7 +57,7 @@ var lapanganList = [
       ]),
   Lapangan(
       name: 'Telaga 3 Futsal',
-      alamatSingkat: 'Sleman, DI Yogyakarta',
+      alamatSingkat: 'Condongcatur, Kec. Depok',
       alamatLengkap:
           'Jl. Gempol Raya, Gempol, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281',
       tentang:
@@ -61,6 +65,7 @@ var lapanganList = [
       jmlCourt: '2',
       jamOperasional: '06:00 - 24:00',
       kategori: 'Futsal',
+      hargaMulaiDari: 'RP 40.000',
       imageAsset: [
         'assets/telaga3futsal.png',
         'assets/telaga3futsal.png',
