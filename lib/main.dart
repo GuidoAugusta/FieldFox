@@ -1,6 +1,7 @@
 import 'package:field_fox/pages/favorit_page.dart';
 import 'package:field_fox/pages/gym_page.dart';
 import 'package:field_fox/pages/homepage.dart';
+import 'package:field_fox/pages/komunitas_page.dart';
 import 'package:field_fox/pages/login_page.dart';
 import 'package:field_fox/pages/main_page.dart';
 import 'package:field_fox/pages/menu_lapangan_page.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/lapangan': (context) => MenuLapanganPage(),
         '/gym': (context) => GymPage(),
         '/favorit': (context) => FavoritePage(),
+        '/komunitas': (context) => KomunitasPage(),
       },
     );
   }

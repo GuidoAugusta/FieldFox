@@ -249,7 +249,7 @@ class _HomePageState extends State<HomePage> {
                 MenuHomepage(
                   image: 'assets/komunitas.png',
                   title: 'Komunitas',
-                  navigator: '',
+                  navigator: '/komunitas',
                 ),
                 MenuHomepage(
                   image: 'assets/bantuan.png',
