@@ -1,3 +1,4 @@
+import 'package:field_fox/pages/favorit_page.dart';
 import 'package:field_fox/pages/gym_page.dart';
 import 'package:field_fox/pages/homepage.dart';
 import 'package:field_fox/pages/login_page.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/homepage': (context) => HomePage(),
         '/lapangan': (context) => MenuLapanganPage(),
         '/gym': (context) => GymPage(),
+        '/favorit': (context) => FavoritePage(),
       },
     );
   }
