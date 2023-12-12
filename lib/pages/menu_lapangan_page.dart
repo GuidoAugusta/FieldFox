@@ -61,14 +61,36 @@ class MenuLapanganPage extends StatelessWidget {
                   crossAxisCount: 2,
                 ),
                 children: [
-                  JenisLapangan(nama: 'Basket', image: 'assets/basket.png'),
-                  JenisLapangan(nama: 'Futsal', image: 'assets/futsal.png'),
                   JenisLapangan(
-                      nama: 'Badminton', image: 'assets/badminton.png'),
-                  JenisLapangan(nama: 'Voli', image: 'assets/voli.png'),
-                  JenisLapangan(nama: 'Renang', image: 'assets/renang.png'),
+                    nama: 'Basket',
+                    image: 'assets/basket.png',
+                    navigator: '/basket',
+                  ),
                   JenisLapangan(
-                      nama: 'Sepak Bola', image: 'assets/sepakBola.png'),
+                    nama: 'Futsal',
+                    image: 'assets/futsal.png',
+                    navigator: '/futsal',
+                  ),
+                  JenisLapangan(
+                    nama: 'Badminton',
+                    image: 'assets/badminton.png',
+                    navigator: '/badminton',
+                  ),
+                  JenisLapangan(
+                    nama: 'Voli',
+                    image: 'assets/voli.png',
+                    navigator: '/voli',
+                  ),
+                  JenisLapangan(
+                    nama: 'Renang',
+                    image: 'assets/renang.png',
+                    navigator: '/renang',
+                  ),
+                  JenisLapangan(
+                    nama: 'Sepak Bola',
+                    image: 'assets/sepakBola.png',
+                    navigator: '/sepakbola',
+                  ),
                 ],
               )
             ],
@@ -82,47 +104,54 @@ class MenuLapanganPage extends StatelessWidget {
 class JenisLapangan extends StatelessWidget {
   final String nama;
   final String image;
+  final String navigator;
 
   JenisLapangan({
     required this.nama,
     required this.image,
+    required this.navigator,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          height: 200,
-          width: 170,
-          decoration: BoxDecoration(
-            color: Colors.amber,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Image.asset(
-            image,
-            fit: BoxFit.fill,
-          ),
-        ),
-        Container(
-          height: 200,
-          decoration: BoxDecoration(
-            color: Color.fromARGB(110, 0, 0, 0),
-            borderRadius: BorderRadius.circular(8),
-          ),
-        ),
-        Center(
-          child: Text(
-            nama,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w700,
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, navigator);
+      },
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            height: 200,
+            width: 170,
+            decoration: BoxDecoration(
+              color: Colors.amber,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Image.asset(
+              image,
+              fit: BoxFit.fill,
             ),
           ),
-        ),
-      ],
+          Container(
+            height: 200,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(110, 0, 0, 0),
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+          Center(
+            child: Text(
+              nama,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

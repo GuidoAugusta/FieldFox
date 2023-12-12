@@ -537,7 +537,7 @@ class MenuLapangan extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, '/notifikasi');
+        Navigator.pushNamed(context, navigator);
       },
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
