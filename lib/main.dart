@@ -1,4 +1,5 @@
 import 'package:field_fox/pages/bantuan_page.dart';
+import 'package:field_fox/pages/chat_page.dart';
 import 'package:field_fox/pages/favorit_page.dart';
 import 'package:field_fox/pages/gym_page.dart';
 import 'package:field_fox/pages/homepage.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/komunitas': (context) => KomunitasPage(),
         '/bantuan': (context) => BantuanPage(),
         '/notifikasi': (context) => NotifikasiPage(),
+        '/chat': (context) => ChatPage(),
       },
     );
   }

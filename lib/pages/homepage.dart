@@ -78,7 +78,9 @@ class _HomePageState extends State<HomePage> {
                               constraints: BoxConstraints(),
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/chat');
+                              },
                               icon: Icon(
                                 FeatherIcons.messageSquare,
                                 size: 30,
@@ -185,6 +187,7 @@ class _HomePageState extends State<HomePage> {
                 MenuLapangan(
                   image: 'assets/bola_basket.png',
                   title: 'Basket',
+                  navigator: '/basket',
                 ),
                 SizedBox(
                   width: 15,
@@ -192,6 +195,7 @@ class _HomePageState extends State<HomePage> {
                 MenuLapangan(
                   image: 'assets/bola_futsal.png',
                   title: 'Futsal',
+                  navigator: '/futsal',
                 ),
                 SizedBox(
                   width: 15,
@@ -199,6 +203,7 @@ class _HomePageState extends State<HomePage> {
                 MenuLapangan(
                   image: 'assets/kok_badminton.png',
                   title: 'Badminton',
+                  navigator: '/badminton',
                 ),
                 SizedBox(
                   width: 15,
@@ -206,6 +211,7 @@ class _HomePageState extends State<HomePage> {
                 MenuLapangan(
                   image: 'assets/bola_voli.png',
                   title: 'Voli',
+                  navigator: '/voli',
                 ),
                 SizedBox(
                   width: 20,
@@ -519,16 +525,20 @@ class RekomendasiLapangan extends StatelessWidget {
 class MenuLapangan extends StatelessWidget {
   final String image;
   final String title;
+  final String navigator;
 
   MenuLapangan({
     required this.image,
     required this.title,
+    required this.navigator,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, '/notifikasi');
+      },
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: UnconstrainedBox(
