@@ -78,7 +78,9 @@ class _HomePageState extends State<HomePage> {
                               constraints: BoxConstraints(),
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/chat');
+                              },
                               icon: Icon(
                                 FeatherIcons.messageSquare,
                                 size: 30,
@@ -92,7 +94,9 @@ class _HomePageState extends State<HomePage> {
                               constraints: BoxConstraints(),
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/notifikasi');
+                              },
                               icon: Icon(
                                 FeatherIcons.bell,
                                 size: 30,
@@ -168,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 8,
               ),
             ],
           ),
@@ -183,6 +187,7 @@ class _HomePageState extends State<HomePage> {
                 MenuLapangan(
                   image: 'assets/bola_basket.png',
                   title: 'Basket',
+                  navigator: '/basket',
                 ),
                 SizedBox(
                   width: 15,
@@ -190,6 +195,7 @@ class _HomePageState extends State<HomePage> {
                 MenuLapangan(
                   image: 'assets/bola_futsal.png',
                   title: 'Futsal',
+                  navigator: '/futsal',
                 ),
                 SizedBox(
                   width: 15,
@@ -197,6 +203,7 @@ class _HomePageState extends State<HomePage> {
                 MenuLapangan(
                   image: 'assets/kok_badminton.png',
                   title: 'Badminton',
+                  navigator: '/badminton',
                 ),
                 SizedBox(
                   width: 15,
@@ -204,6 +211,7 @@ class _HomePageState extends State<HomePage> {
                 MenuLapangan(
                   image: 'assets/bola_voli.png',
                   title: 'Voli',
+                  navigator: '/voli',
                 ),
                 SizedBox(
                   width: 20,
@@ -212,7 +220,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(
-            height: 24,
+            height: 20,
           ),
           Padding(
             padding: EdgeInsets.only(left: 20),
@@ -234,22 +242,27 @@ class _HomePageState extends State<HomePage> {
                 MenuHomepage(
                   image: 'assets/lapangan.png',
                   title: 'Lapangan',
+                  navigator: '/lapangan',
                 ),
                 MenuHomepage(
                   image: 'assets/gym.png',
                   title: 'Gym',
+                  navigator: '/gym',
                 ),
                 MenuHomepage(
                   image: 'assets/favorite.png',
                   title: 'Favorit',
+                  navigator: '/favorit',
                 ),
                 MenuHomepage(
                   image: 'assets/komunitas.png',
                   title: 'Komunitas',
+                  navigator: '/komunitas',
                 ),
                 MenuHomepage(
                   image: 'assets/bantuan.png',
                   title: 'Bantuan',
+                  navigator: '/bantuan',
                 ),
               ],
             ),
@@ -330,7 +343,7 @@ class RekomendasiLapangan extends StatelessWidget {
                       topRight: Radius.circular(8),
                     ),
                     child: Image.asset(
-                      lapangan.imageAsset,
+                      lapangan.imageAsset[0],
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -338,25 +351,83 @@ class RekomendasiLapangan extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
                   child: SizedBox(
-                    height: 60,
+                    height: 58,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          lapangan.name,
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w500),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              // height: 38,
+                              width: 115,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Text(
+                                        lapangan.name,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset('assets/star.png'),
+                                  SizedBox(
+                                    width: 3,
+                                  ),
+                                  Text(
+                                    '4.4',
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 4,
                         ),
-                        Image.asset('assets/rating.png'),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 0),
+                          child: UnconstrainedBox(
+                            child: Container(
+                              // width: 90,
+                              // height: 30,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF58235),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                                child: Text(
+                                  lapangan.kategori,
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 28,
+                  height: 30,
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
@@ -376,7 +447,7 @@ class RekomendasiLapangan extends StatelessWidget {
                           Text(
                             lapangan.alamatSingkat,
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 10,
                               fontWeight: FontWeight.w300,
                             ),
                           )
@@ -388,16 +459,16 @@ class RekomendasiLapangan extends StatelessWidget {
                       Row(
                         children: [
                           Icon(
-                            FeatherIcons.calendar,
+                            FeatherIcons.clock,
                             size: 14,
                           ),
                           SizedBox(
                             width: 5,
                           ),
                           Text(
-                            'Tersedia',
+                            lapangan.jamOperasional,
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 10,
                               fontWeight: FontWeight.w300,
                             ),
                           )
@@ -406,7 +477,9 @@ class RekomendasiLapangan extends StatelessWidget {
                     ],
                   ),
                 ),
-                Divider(),
+                Divider(
+                  thickness: 1.2,
+                ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
                   child: Row(
@@ -427,7 +500,7 @@ class RekomendasiLapangan extends StatelessWidget {
                             height: 1,
                           ),
                           Text(
-                            'Rp 30.000',
+                            lapangan.hargaMulaiDari,
                             style: TextStyle(
                               color: Color(0xFFF48C06),
                               fontSize: 14,
@@ -452,16 +525,20 @@ class RekomendasiLapangan extends StatelessWidget {
 class MenuLapangan extends StatelessWidget {
   final String image;
   final String title;
+  final String navigator;
 
   MenuLapangan({
     required this.image,
     required this.title,
+    required this.navigator,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, navigator);
+      },
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: UnconstrainedBox(
@@ -503,13 +580,20 @@ class MenuLapangan extends StatelessWidget {
 class MenuHomepage extends StatelessWidget {
   final String image;
   final String title;
+  final String navigator;
 
-  MenuHomepage({required this.image, required this.title});
+  MenuHomepage({
+    required this.image,
+    required this.title,
+    required this.navigator,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, navigator);
+      },
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: Column(
@@ -522,7 +606,7 @@ class MenuHomepage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8)),
               elevation: 3,
               margin: EdgeInsets.zero,
-              color: Color(0xFFFFF6EE),
+              color: Color.fromARGB(255, 255, 227, 203),
               child: Image.asset(image),
             ),
           ),
