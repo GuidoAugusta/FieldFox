@@ -92,7 +92,9 @@ class _HomePageState extends State<HomePage> {
                               constraints: BoxConstraints(),
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/notifikasi');
+                              },
                               icon: Icon(
                                 FeatherIcons.bell,
                                 size: 30,
