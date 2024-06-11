@@ -13,7 +13,7 @@ import 'package:field_fox/pages/menu_lapangan_page.dart';
 import 'package:field_fox/pages/notifikasi_page.dart';
 import 'package:field_fox/pages/register_page.dart';
 import 'package:field_fox/pages/renang_page.dart';
-import 'package:field_fox/pages/sepakBola_page.dart';
+import 'package:field_fox/pages/sepakbola_page.dart';
 import 'package:field_fox/pages/splash_page.dart';
 import 'package:field_fox/pages/voli_page.dart';
 import 'package:flutter/material.dart';
