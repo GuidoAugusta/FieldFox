@@ -113,12 +113,12 @@ class ProfilePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushAndRemoveUntil(context, PageRouteBuilder(
-                  pageBuilder: (BuildContext context, Animation animation,
-                      Animation secondaryAnimation) {
-                    return LoginPage();
-                  },
-                ), (Route route) => false);
+                // Navigator.pushAndRemoveUntil(context, PageRouteBuilder(
+                //   pageBuilder: (BuildContext context, Animation animation,
+                //       Animation secondaryAnimation) {
+                //     // return LoginPage();
+                //   },
+                // ), (Route route) => false);
               },
               child: Text('Keluar'),
               style: ElevatedButton.styleFrom(
