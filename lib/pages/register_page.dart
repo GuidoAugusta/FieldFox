@@ -1,256 +1,213 @@
-import 'package:field_fox/pages/main_page.dart';
+import 'package:field_fox/shared/themes/theme.dart';
+import 'package:field_fox/widgets/button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
-class RegisterPage extends StatefulWidget {
+class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
-
-  @override
-  State<RegisterPage> createState() => _RegisterPageState();
-}
-
-class _RegisterPageState extends State<RegisterPage> {
-  // status show password
-  bool _isPasswordObscure = true;
-  bool _isPasswordConfirmationObscure = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.zero,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  Image.asset('assets/ellipse2.png'),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 44, left: 20),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Icon(
-                          Icons.arrow_back_ios_new_rounded,
-                          size: 20,
-                          color: Color(0xFFF58235),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+          const SizedBox(
+            height: 32,
           ),
-          SizedBox(
-            height: 44,
+          Text(
+            'Daftar,',
+            style: blackTextStyle.copyWith(
+              fontSize: 36,
+              fontWeight: semiBold,
+            ),
+          ),
+          Text(
+            'Untuk',
+            style: primaryTextStyle.copyWith(
+              fontSize: 36,
+              fontWeight: semiBold,
+            ),
+          ),
+          Text(
+            'Memulai',
+            style: primaryTextStyle.copyWith(
+              fontSize: 36,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 32,
+          ),
+          TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.email,
+                color: blackColor.withOpacity(0.4),
+              ),
+              hintText: 'masukkan email kamu',
+              hintStyle: blackTextStyle.copyWith(
+                fontWeight: normal,
+                fontSize: 14,
+                color: blackColor.withOpacity(0.4),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.phone_android_rounded,
+                color: blackColor.withOpacity(0.4),
+              ),
+              hintText: 'masukkan nomor telepon kamu',
+              hintStyle: blackTextStyle.copyWith(
+                fontWeight: normal,
+                fontSize: 14,
+                color: blackColor.withOpacity(0.4),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.lock,
+                color: blackColor.withOpacity(0.4),
+              ),
+              suffixIcon: Icon(
+                Icons.visibility,
+                color: blackColor.withOpacity(0.4),
+                size: 18,
+              ),
+              hintText: 'masukkan password kamu',
+              hintStyle: blackTextStyle.copyWith(
+                fontWeight: normal,
+                fontSize: 14,
+                color: blackColor.withOpacity(0.4),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 22,
+          ),
+          PrimaryButton(
+            title: 'Daftar',
+            onTap: () {},
+          ),
+          const SizedBox(
+            height: 22,
           ),
           Center(
             child: Text(
-              'FieldFox',
-              style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFFF58235)),
+              'Atau login menggunakan',
+              style: blackTextStyle.copyWith(
+                fontWeight: normal,
+                fontSize: 14,
+                color: blackColor.withOpacity(0.4),
+              ),
             ),
           ),
-          SizedBox(
-            height: 83,
+          const SizedBox(
+            height: 22,
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Nama Lengkap',
-                  style: TextStyle(fontSize: 16),
+          InkWell(
+            onTap: () {},
+            child: Container(
+              height: 52,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: blackColor.withOpacity(0.4),
                 ),
-                SizedBox(
-                  height: 5,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'masukkan nama',
-                    hintStyle: TextStyle(color: Color(0x40000000)),
-                    hoverColor: Colors.transparent,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/ic_google.png',
+                    width: 24,
+                    height: 24,
                   ),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Text(
-                  'Email',
-                  style: TextStyle(fontSize: 16),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Masukkan email',
-                    hintStyle: TextStyle(color: Color(0x40000000)),
-                    hoverColor: Colors.transparent,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
+                  const SizedBox(
+                    width: 8,
                   ),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Text(
-                  'Password',
-                  style: TextStyle(fontSize: 16),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onPressed: () {
-                        setState(() {
-                          _isPasswordObscure = !_isPasswordObscure;
-                        });
-                      },
-                      icon: Icon(
-                        _isPasswordObscure
-                            ? FeatherIcons.eye
-                            : FeatherIcons.eyeOff,
-                        color: Color(0x33000000),
-                      ),
+                  Text(
+                    'Google',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: bold,
+                      color: blackColor.withOpacity(0.4),
                     ),
-                    hintText: 'Masukkan password',
-                    hintStyle: TextStyle(color: Color(0x40000000)),
-                    hoverColor: Colors.transparent,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  obscureText: _isPasswordObscure,
-                  obscuringCharacter: '●',
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Text(
-                  'Konfirmasi Password',
-                  style: TextStyle(fontSize: 16),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onPressed: () {
-                        setState(() {
-                          _isPasswordConfirmationObscure =
-                              !_isPasswordConfirmationObscure;
-                        });
-                      },
-                      icon: Icon(
-                        _isPasswordConfirmationObscure
-                            ? FeatherIcons.eye
-                            : FeatherIcons.eyeOff,
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                    hintText: 'Masukkan password',
-                    hintStyle: TextStyle(color: Color(0x40000000)),
-                    hoverColor: Colors.transparent,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                  ),
-                  obscureText: _isPasswordConfirmationObscure,
-                  obscuringCharacter: '●',
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Center(
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      surfaceTintColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      backgroundColor: Color(0xFFF58235),
-                      minimumSize: Size(double.infinity, 52),
-                    ),
-                    onPressed: () {
-                      currentIndex = 0;
-                      Navigator.pushNamed(context, '/mainpage');
-                    },
-                    child: Text(
-                      'Register',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 26,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Sudah punya akun? ',
+                style: blackTextStyle.copyWith(
+                  fontWeight: normal,
+                  fontSize: 14,
+                  color: blackColor.withOpacity(0.4),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/login');
+                },
+                child: Text(
+                  'Masuk',
+                  style: primaryTextStyle.copyWith(
+                    fontWeight: semiBold,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 179,
+          ),
         ],
       ),
     );

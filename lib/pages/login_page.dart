@@ -183,7 +183,9 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/register');
+                },
                 child: Text(
                   'Daftar',
                   style: primaryTextStyle.copyWith(
@@ -192,11 +194,11 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 179,
-              ),
             ],
-          )
+          ),
+          const SizedBox(
+            height: 179,
+          ),
         ],
       ),
     );
