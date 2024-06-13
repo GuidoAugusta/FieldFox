@@ -16,22 +16,26 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-          color: primaryColor,
+    return Container(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        color: primaryColor,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
           borderRadius: BorderRadius.circular(12),
-        ),
-        child: Center(
-          child: Text(title,
-              style: whiteTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: bold,
-              ),
-              textAlign: TextAlign.center),
+          child: Center(
+            child: Text(title,
+                style: whiteTextStyle.copyWith(
+                  fontSize: 16,
+                  fontWeight: bold,
+                ),
+                textAlign: TextAlign.center),
+          ),
         ),
       ),
     );

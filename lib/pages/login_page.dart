@@ -159,36 +159,40 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 22,
             ),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                height: 52,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: blackColor.withOpacity(0.4),
-                  ),
+            Container(
+              height: 52,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: blackColor.withOpacity(0.4),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/ic_google.png',
-                      width: 24,
-                      height: 24,
-                    ),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Text('Google',
-                        style: blackTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: bold,
-                          color: blackColor.withOpacity(0.4),
-                        ),
-                        textAlign: TextAlign.center),
-                  ],
+              ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () {},
+                  borderRadius: BorderRadius.circular(12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/ic_google.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Text('Google',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 16,
+                            fontWeight: bold,
+                            color: blackColor.withOpacity(0.4),
+                          ),
+                          textAlign: TextAlign.center),
+                    ],
+                  ),
                 ),
               ),
             ),

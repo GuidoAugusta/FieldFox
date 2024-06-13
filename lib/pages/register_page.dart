@@ -168,17 +168,18 @@ class _RegisterPageState extends State<RegisterPage> {
             const SizedBox(
               height: 22,
             ),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                height: 52,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: blackColor.withOpacity(0.4),
-                  ),
+            Container(
+              height: 52,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: blackColor.withOpacity(0.4),
                 ),
+              ),
+              child: InkWell(
+                onTap: () {},
+                borderRadius: BorderRadius.circular(12),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
