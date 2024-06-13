@@ -1,190 +1,201 @@
-import 'package:field_fox/pages/main_page.dart';
-import 'package:field_fox/pages/register_page.dart';
+import 'package:field_fox/shared/themes/theme.dart';
+import 'package:field_fox/widgets/button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  // status show password
-  bool _isObscure = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.zero,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
+          const SizedBox(
+            height: 32,
+          ),
+          Text(
+            'Halo,',
+            style: blackTextStyle.copyWith(
+              fontSize: 36,
+              fontWeight: semiBold,
+            ),
+          ),
+          Text(
+            'Selamat',
+            style: primaryTextStyle.copyWith(
+              fontSize: 36,
+              fontWeight: semiBold,
+            ),
+          ),
+          Text(
+            'Datang',
+            style: primaryTextStyle.copyWith(
+              fontSize: 36,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 32,
+          ),
+          TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.email,
+                color: blackColor.withOpacity(0.4),
+              ),
+              hintText: 'masukkan email kamu',
+              hintStyle: blackTextStyle.copyWith(
+                fontWeight: normal,
+                fontSize: 14,
+                color: blackColor.withOpacity(0.4),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.lock,
+                color: blackColor.withOpacity(0.4),
+              ),
+              suffixIcon: Icon(
+                Icons.visibility,
+                color: blackColor.withOpacity(0.4),
+                size: 18,
+              ),
+              hintText: 'masukkan password kamu',
+              hintStyle: blackTextStyle.copyWith(
+                fontWeight: normal,
+                fontSize: 14,
+                color: blackColor.withOpacity(0.4),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Image.asset('assets/ellipse1.png'),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Lupa Password?',
+                  style: blackTextStyle.copyWith(
+                    fontWeight: normal,
+                    fontSize: 14,
+                    color: blackColor.withOpacity(0.4),
+                  ),
+                ),
+              ),
             ],
           ),
-          SizedBox(
-            height: 44,
+          const SizedBox(
+            height: 22,
+          ),
+          PrimaryButton(
+            title: 'Login',
+            onTap: () {},
+          ),
+          const SizedBox(
+            height: 22,
           ),
           Center(
             child: Text(
-              'FieldFox',
-              style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFFF58235)),
+              'Atau login menggunakan',
+              style: blackTextStyle.copyWith(
+                fontWeight: normal,
+                fontSize: 14,
+                color: blackColor.withOpacity(0.4),
+              ),
             ),
           ),
-          SizedBox(
-            height: 83,
+          const SizedBox(
+            height: 22,
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Email',
-                  style: TextStyle(fontSize: 16),
+          InkWell(
+            onTap: () {},
+            child: Container(
+              height: 52,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: blackColor.withOpacity(0.4),
                 ),
-                SizedBox(
-                  height: 5,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Masukkan email',
-                    hintStyle: TextStyle(color: Color(0x40000000)),
-                    hoverColor: Colors.transparent,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/ic_google.png',
+                    width: 24,
+                    height: 24,
                   ),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Text(
-                  'Password',
-                  style: TextStyle(fontSize: 16),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onPressed: () {
-                        setState(() {
-                          _isObscure = !_isObscure;
-                        });
-                      },
-                      icon: Icon(
-                        _isObscure ? FeatherIcons.eye : FeatherIcons.eyeOff,
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                    hintText: 'Masukkan password',
-                    hintStyle: TextStyle(color: Color(0x40000000)),
-                    hoverColor: Colors.transparent,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Color(0x33000000),
-                      ),
-                    ),
+                  const SizedBox(
+                    width: 8,
                   ),
-                  obscureText: _isObscure,
-                  obscuringCharacter: '●',
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      overlayColor:
-                          MaterialStateProperty.all(Colors.transparent),
-                      onTap: () {},
-                      child: Text(
-                        'Lupa Password?',
-                        style: TextStyle(color: Color(0xFFA9A9A9)),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Center(
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      surfaceTintColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      backgroundColor: Color(0xFFF58235),
-                      minimumSize: Size(double.infinity, 52),
-                    ),
-                    onPressed: () {
-                      currentIndex = 0;
-                      Navigator.pushNamed(context, '/mainpage');
-                    },
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
+                  Text('Google',
+                      style: blackTextStyle.copyWith(
                         fontSize: 16,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: bold,
+                        color: blackColor.withOpacity(0.4),
                       ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Center(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const RegisterPage()));
-                    },
-                    splashColor: Colors.transparent,
-                    overlayColor: MaterialStateProperty.all(Colors.transparent),
-                    child: Text(
-                      'Register',
-                      style: TextStyle(
-                        color: Color(0xFFF58235),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                      textAlign: TextAlign.center),
+                ],
+              ),
             ),
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Belum punya akun? ',
+                style: blackTextStyle.copyWith(
+                  fontWeight: normal,
+                  fontSize: 14,
+                  color: blackColor.withOpacity(0.4),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Text(
+                  'Daftar',
+                  style: primaryTextStyle.copyWith(
+                    fontWeight: semiBold,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 179,
+              ),
+            ],
           )
         ],
       ),
