@@ -141,7 +141,9 @@ class _LoginPageState extends State<LoginPage> {
             ),
             PrimaryButton(
               title: 'Login',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/mainpage');
+              },
             ),
             const SizedBox(
               height: 22,
