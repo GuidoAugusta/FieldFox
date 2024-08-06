@@ -17,6 +17,7 @@ import 'package:field_fox/pages/sepakbola_page.dart';
 import 'package:field_fox/pages/splash_page.dart';
 import 'package:field_fox/pages/voli_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,28 +28,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        '/': (context) => SplashPage(),
-        '/login': (context) => LoginPage(),
-        '/register': (context) => RegisterPage(),
-        '/mainpage': (context) => MainPage(),
-        '/homepage': (context) => HomePage(),
-        '/lapangan': (context) => MenuLapanganPage(),
-        '/gym': (context) => GymPage(),
-        '/favorit': (context) => FavoritePage(),
-        '/komunitas': (context) => KomunitasPage(),
-        '/bantuan': (context) => BantuanPage(),
-        '/notifikasi': (context) => NotifikasiPage(),
-        '/chat': (context) => ChatPage(),
-        '/basket': (context) => BasketPage(),
-        '/futsal': (context) => FutsalPage(),
-        '/badminton': (context) => BadmintonPage(),
-        '/voli': (context) => VoliPage(),
-        '/sepakbola': (context) => SepakBolaPage(),
-        '/renang': (context) => RenangPage(),
-      },
+    return ScreenUtilInit(
+      designSize: const Size(360, 800),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          '/': (context) => SplashPage(),
+          '/login': (context) => LoginPage(),
+          '/register': (context) => RegisterPage(),
+          '/mainpage': (context) => MainPage(),
+          '/homepage': (context) => HomePage(),
+          '/lapangan': (context) => MenuLapanganPage(),
+          '/gym': (context) => GymPage(),
+          '/favorit': (context) => FavoritePage(),
+          '/komunitas': (context) => KomunitasPage(),
+          '/bantuan': (context) => BantuanPage(),
+          '/notifikasi': (context) => NotifikasiPage(),
+          '/chat': (context) => ChatPage(),
+          '/basket': (context) => BasketPage(),
+          '/futsal': (context) => FutsalPage(),
+          '/badminton': (context) => BadmintonPage(),
+          '/voli': (context) => VoliPage(),
+          '/sepakbola': (context) => SepakBolaPage(),
+          '/renang': (context) => RenangPage(),
+        },
+      ),
     );
   }
 }
