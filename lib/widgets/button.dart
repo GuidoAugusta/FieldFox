@@ -30,7 +30,7 @@ class PrimaryButton extends StatelessWidget {
           child: Center(
             child: Text(title,
                 style: whiteTextStyle.copyWith(
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   fontWeight: semiBold,
                 ),
                 textAlign: TextAlign.center),

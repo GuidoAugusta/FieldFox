@@ -52,12 +52,16 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     SizedBox(height: 40.h),
                     TextField(
+                      style: blackTextStyle.copyWith(
+                        fontWeight: light,
+                        fontSize: 12.sp,
+                      ),
                       controller: usernameController,
                       decoration: InputDecoration(
                         hintText: 'masukkan email kamu',
                         hintStyle: blackTextStyle.copyWith(
-                          fontWeight: normal,
-                          fontSize: 14.sp,
+                          fontWeight: light,
+                          fontSize: 12.sp,
                           color: blackColor.withOpacity(0.4),
                         ),
                         border: OutlineInputBorder(
@@ -73,6 +77,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     SizedBox(height: 16.h),
                     TextField(
+                      style: blackTextStyle.copyWith(
+                        fontWeight: light,
+                        fontSize: 12.sp,
+                      ),
                       controller: passwordController,
                       obscureText: isObscure,
                       decoration: InputDecoration(
@@ -96,8 +104,8 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         hintText: 'masukkan password kamu',
                         hintStyle: blackTextStyle.copyWith(
-                          fontWeight: normal,
-                          fontSize: 14.sp,
+                          fontWeight: light,
+                          fontSize: 12.sp,
                           color: blackColor.withOpacity(0.4),
                         ),
                         border: OutlineInputBorder(
