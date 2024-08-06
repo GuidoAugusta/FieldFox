@@ -1,6 +1,7 @@
 import 'package:field_fox/shared/themes/theme.dart';
 import 'package:field_fox/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -13,219 +14,166 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool isObscure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Stack(
           children: [
-            const SizedBox(
-              height: 32,
-            ),
-            Text(
-              'Halo,',
-              style: blackTextStyle.copyWith(
-                fontSize: 36,
-                fontWeight: semiBold,
-              ),
-            ),
-            Text(
-              'Selamat',
-              style: primaryTextStyle.copyWith(
-                fontSize: 36,
-                fontWeight: semiBold,
-              ),
-            ),
-            Text(
-              'Datang',
-              style: primaryTextStyle.copyWith(
-                fontSize: 36,
-                fontWeight: semiBold,
-              ),
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            TextField(
-              controller: usernameController,
-              decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.email,
-                  color: blackColor.withOpacity(0.4),
-                ),
-                hintText: 'masukkan email kamu',
-                hintStyle: blackTextStyle.copyWith(
-                  fontWeight: normal,
-                  fontSize: 14,
-                  color: blackColor.withOpacity(0.4),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(
-                    color: primaryColor,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            TextField(
-              controller: passwordController,
-              obscureText: isObscure,
-              decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.lock,
-                  color: blackColor.withOpacity(0.4),
-                ),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isObscure = !isObscure;
-                    });
-                  },
-                  icon: (isObscure == true)
-                      ? Icon(
-                          Icons.visibility,
-                          color: blackColor.withOpacity(0.4),
-                          size: 18,
-                        )
-                      : Icon(
-                          Icons.visibility_off,
-                          color: blackColor.withOpacity(0.4),
-                          size: 18,
-                        ),
-                ),
-                hintText: 'masukkan password kamu',
-                hintStyle: blackTextStyle.copyWith(
-                  fontWeight: normal,
-                  fontSize: 14,
-                  color: blackColor.withOpacity(0.4),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(
-                    color: primaryColor,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 14,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Lupa Password?',
-                    style: blackTextStyle.copyWith(
-                      fontWeight: normal,
-                      fontSize: 14,
-                      color: blackColor.withOpacity(0.4),
+            SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 32.h),
+                    Text(
+                      'Halo,',
+                      style: blackTextStyle.copyWith(
+                        fontSize: 36.sp,
+                        fontWeight: semiBold,
+                      ),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 22,
-            ),
-            PrimaryButton(
-              title: 'Login',
-              onTap: () {},
-            ),
-            const SizedBox(
-              height: 22,
-            ),
-            Center(
-              child: Text(
-                'Atau login menggunakan',
-                style: blackTextStyle.copyWith(
-                  fontWeight: normal,
-                  fontSize: 14,
-                  color: blackColor.withOpacity(0.4),
+                    Text(
+                      'Selamat',
+                      style: primaryTextStyle.copyWith(
+                        fontSize: 36.sp,
+                        fontWeight: semiBold,
+                      ),
+                    ),
+                    Text(
+                      'Datang',
+                      style: primaryTextStyle.copyWith(
+                        fontSize: 36.sp,
+                        fontWeight: semiBold,
+                      ),
+                    ),
+                    SizedBox(height: 40.h),
+                    TextField(
+                      controller: usernameController,
+                      decoration: InputDecoration(
+                        hintText: 'masukkan email kamu',
+                        hintStyle: blackTextStyle.copyWith(
+                          fontWeight: normal,
+                          fontSize: 14.sp,
+                          color: blackColor.withOpacity(0.4),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12.r),
+                          borderSide: BorderSide(
+                            color: primaryColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 16.h),
+                    TextField(
+                      controller: passwordController,
+                      obscureText: isObscure,
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              isObscure = !isObscure;
+                            });
+                          },
+                          icon: (isObscure == true)
+                              ? Icon(
+                                  Icons.visibility,
+                                  color: blackColor.withOpacity(0.4),
+                                  size: 18,
+                                )
+                              : Icon(
+                                  Icons.visibility_off,
+                                  color: blackColor.withOpacity(0.4),
+                                  size: 18,
+                                ),
+                        ),
+                        hintText: 'masukkan password kamu',
+                        hintStyle: blackTextStyle.copyWith(
+                          fontWeight: normal,
+                          fontSize: 14.sp,
+                          color: blackColor.withOpacity(0.4),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12.r),
+                          borderSide: BorderSide(
+                            color: primaryColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 14.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Lupa Password?',
+                            style: blackTextStyle.copyWith(
+                              fontWeight: normal,
+                              fontSize: 14.sp,
+                              color: blackColor.withOpacity(0.4),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 32.h),
+                    PrimaryButton(
+                      title: 'Login',
+                      onTap: () {},
+                    ),
+                    SizedBox(height: 32.h),
+                  ],
                 ),
               ),
             ),
-            const SizedBox(
-              height: 22,
-            ),
-            Container(
-              height: 52,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: blackColor.withOpacity(0.4),
-                ),
-              ),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/ic_google.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Text('Google',
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Belum punya akun? ',
                           style: blackTextStyle.copyWith(
-                            fontSize: 16,
-                            fontWeight: bold,
+                            fontWeight: normal,
+                            fontSize: 14.sp,
                             color: blackColor.withOpacity(0.4),
                           ),
-                          textAlign: TextAlign.center),
-                    ],
-                  ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/register');
+                          },
+                          child: Text(
+                            'Daftar',
+                            style: primaryTextStyle.copyWith(
+                              fontWeight: semiBold,
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 32.h),
+                  ],
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Belum punya akun? ',
-                  style: blackTextStyle.copyWith(
-                    fontWeight: normal,
-                    fontSize: 14,
-                    color: blackColor.withOpacity(0.4),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/register');
-                  },
-                  child: Text(
-                    'Daftar',
-                    style: primaryTextStyle.copyWith(
-                      fontWeight: semiBold,
-                      fontSize: 14,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 179,
             ),
           ],
         ),

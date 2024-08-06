@@ -1,14 +1,13 @@
 import 'package:field_fox/shared/themes/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PrimaryButton extends StatelessWidget {
-  final double height;
   final double width;
   final String title;
   final VoidCallback? onTap;
   const PrimaryButton({
     super.key,
-    this.height = 52,
     this.width = double.infinity,
     required this.title,
     this.onTap,
@@ -17,22 +16,22 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
+      height: 50.h,
       width: width,
       decoration: BoxDecoration(
         color: primaryColor,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
           onTap: onTap,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           child: Center(
             child: Text(title,
                 style: whiteTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: bold,
+                  fontSize: 16.sp,
+                  fontWeight: semiBold,
                 ),
                 textAlign: TextAlign.center),
           ),
